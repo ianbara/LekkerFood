@@ -1,0 +1,12 @@
+﻿@model IEnumerable<LekkerFood.Models.RecipeIngredient>
+
+
+<ul>
+    @foreach (var recipeIngredient in Model)
+            {
+        <li>
+            @Html.ActionLink("Edit", "EditIngredientRecipe", "RecipeIngredient", new { recipeIngredientId = recipeIngredient.Id }, null)
+            @recipeIngredient.Quantity @recipeIngredient.MeasurementType.Name @recipeIngredient.Ingredient.Name
+        </li>
+    }
+</ul>

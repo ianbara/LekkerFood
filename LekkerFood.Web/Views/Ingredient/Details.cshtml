@@ -1,0 +1,88 @@
+﻿@model LekkerFood.Models.Ingredient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dd>
+            @Html.HiddenFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sugar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sugar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carbohydrates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carbohydrates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calories)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fibre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fibre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Protien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Protien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sodium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sodium)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

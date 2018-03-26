@@ -1,0 +1,132 @@
+﻿@model LekkerFood.Models.Recipe
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="col-lg-3">
+    <h2>Ingredients</h2>
+    <ul>
+        @foreach (var recipeIngredient in Model.RecipeIngredients)
+            {
+            <li>@recipeIngredient.Quantity @recipeIngredient.MeasurementType.Name @recipeIngredient.Ingredient.Name</li>
+        }
+    </ul>
+
+</div>
+
+
+<div class="col-lg-9">
+
+    <h2>@Model.Name</h2>
+
+    <img src="@Model.PhotoThumbUrl" />
+
+    @Html.DisplayNameFor(model => model.Name)
+
+    <hr />
+
+
+    @if (!string.IsNullOrWhiteSpace(Model.Method))
+    {
+        @Html.DisplayFor(model => model.Method)
+    }
+
+    @Html.DisplayFor(model => model.Rating)
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Freezable)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Freezable)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Servings)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Servings)
+    </dd>
+
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PrepTime)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PrepTime)
+    </dd>
+
+
+    <dt>
+        @Html.DisplayNameFor(model => model.CookingTime)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.CookingTime)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Vegetarian)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Vegetarian)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Vegan)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Vegan)
+    </dd>
+
+
+    <dt>
+        @Html.DisplayNameFor(model => model.GlutenFree)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.GlutenFree)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ContainsNuts)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ContainsNuts)
+    </dd>
+
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Cost)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Cost)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Description)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Description)
+    </dd>
+
+
+    </dl>
+</div>
+
+
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

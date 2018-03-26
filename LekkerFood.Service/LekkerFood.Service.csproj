@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB2E72C3-7FF5-4398-8A1C-8CBC3DD01F0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LekkerFood.Service</RootNamespace>
+    <AssemblyName>LekkerFood.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FoodService.cs" />
+    <Compile Include="RecipeIngredientService.cs" />
+    <Compile Include="Interfaces\IRecipeIngredientService.cs" />
+    <Compile Include="RecipeService.cs" />
+    <Compile Include="Interfaces\IRecipeService.cs" />
+    <Compile Include="Interfaces\IPreparationTypeService.cs" />
+    <Compile Include="MeasurementTypeService.cs" />
+    <Compile Include="Interfaces\IMeasurementTypeService.cs" />
+    <Compile Include="Interfaces\IRecipeCategoryService.cs" />
+    <Compile Include="PreparationTypeService.cs" />
+    <Compile Include="RecipeCategoryService.cs" />
+    <Compile Include="IngredientService.cs" />
+    <Compile Include="IngredientCategoryService.cs" />
+    <Compile Include="Interfaces\IIngredientService.cs" />
+    <Compile Include="Interfaces\IIngredientCategoryService.cs" />
+    <Compile Include="Interfaces\IFoodService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LekkerFood.Models\LekkerFood.Models.csproj">
+      <Project>{3f4818fa-2dc2-4111-b673-42c5789cf6aa}</Project>
+      <Name>LekkerFood.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LekkerFood.Repository\LekkerFood.Repository.csproj">
+      <Project>{78ab2e4e-9bd9-4008-869b-d22f5a98eac0}</Project>
+      <Name>LekkerFood.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
